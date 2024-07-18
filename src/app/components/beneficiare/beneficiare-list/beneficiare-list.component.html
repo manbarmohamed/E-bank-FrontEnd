@@ -1,0 +1,9 @@
+<h1>Beneficiaires</h1>
+<a routerLink="/beneficiaire">Add Beneficiaire</a>
+<ul>
+  <li *ngFor="let beneficiaire of beneficiare">
+    {{ beneficiaire.nom }} - {{ beneficiaire.banque }} - {{ beneficiaire.numeroCompte }}
+    <a [routerLink]="['/beneficiaire', beneficiaire.id]">Edit</a>
+    <button (click)="deleteBeneficiaire(beneficiaire.id)">Delete</button>
+  </li>
+</ul>

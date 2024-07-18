@@ -1,0 +1,13 @@
+<h1>{{ isEditeMode ? 'Edit Beneficiaire' : 'Add Beneficiaire' }}</h1>
+<form [formGroup]="beneficiareForm" (ngSubmit)="saveBeneficiaire()">
+  <label for="nom">Nom:</label>
+  <input id="nom" formControlName="nom" />
+  
+  <label for="banque">Banque:</label>
+  <input id="banque" formControlName="banque" />
+  
+  <label for="numeroCompte">Numero Compte:</label>
+  <input id="numeroCompte" formControlName="numeroCompte" />
+  
+  <button type="submit">{{ isEditeMode ? 'Update' : 'Save' }}</button>
+</form>

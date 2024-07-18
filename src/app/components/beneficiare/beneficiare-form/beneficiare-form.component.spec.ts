@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BeneficiareComponent } from './beneficiare.component';
+import { BeneficiareFormComponent } from './beneficiare-form.component';
 
-describe('BeneficiareComponent', () => {
-  let component: BeneficiareComponent;
-  let fixture: ComponentFixture<BeneficiareComponent>;
+describe('BeneficiareFormComponent', () => {
+  let component: BeneficiareFormComponent;
+  let fixture: ComponentFixture<BeneficiareFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BeneficiareComponent]
+      imports: [BeneficiareFormComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BeneficiareComponent);
+    fixture = TestBed.createComponent(BeneficiareFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
