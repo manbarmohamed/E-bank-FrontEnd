@@ -1,0 +1,23 @@
+<h2>Dashboard</h2>
+<section>
+  <h3>Your Accounts</h3>
+  <ul>
+    <li *ngFor="let account of accounts">
+      {{ account.type }}: {{ account.solde}}
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Recent Transactions</h3>
+  <ul>
+    <li *ngFor="let transaction of recentTransactions">
+      {{ transaction.dateHeure}}: {{ transaction.description }} - {{ transaction.montant}}
+    </li>
+  </ul>
+</section>
+<nav>
+  <a routerLink="/accounts">View All Accounts</a>
+  <a routerLink="/transactions">View All Transactions</a>
+  <a routerLink="/beneficiaries">Manage Beneficiaries</a>
+  <a routerLink="/cards">Manage Cards</a>
+</nav>

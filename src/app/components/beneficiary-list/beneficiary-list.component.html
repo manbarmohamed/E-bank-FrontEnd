@@ -1,0 +1,19 @@
+<h2>Beneficiaries</h2>
+<ul>
+  <li *ngFor="let beneficiary of beneficiaries">
+    {{ beneficiary.nom }} - {{ beneficiary.numeroCompte }}
+    <button (click)="deleteBeneficiary(beneficiary.id)">Delete</button>
+  </li>
+</ul>
+<form (ngSubmit)="addBeneficiary(name.value, accountNumber.value)">
+  <h3>Add New Beneficiary</h3>
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="text" #name>
+  </div>
+  <div>
+    <label for="accountNumber">Account Number:</label>
+    <input id="accountNumber" type="text" #accountNumber>
+  </div>
+  <button type="submit">Add Beneficiary</button>
+</form>

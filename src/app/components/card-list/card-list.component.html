@@ -1,0 +1,27 @@
+<h2>Your Cards</h2>
+<ul>
+  <li *ngFor="let card of cards">
+    {{ card.type }} - {{ card.numero }}
+    <button (click)="toggleCardStatus(card.id, !card.active)">
+      {{ card.active ? 'Deactivate' : 'Activate' }}
+    </button>
+    <button *ngIf="card.active" (click)="blockCard(card.id, 'Lost')">Block</button>
+  </li>
+</ul>
+<form (ngSubmit)="addCard(accountId.value, cardType.value)">
+  <h3>Add New Card</h3>
+  <div>
+    <label for="accountId">For Account:</label>
+    <select id="accountId" #accountId>
+      <option *ngFor="let account of accounts" [value]="account.id">{{ account.type }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="cardType">Card Type:</label>
+    <select id="cardType" #cardType>
+      <option value="DEBIT">Debit</option>
+      <option value="CREDIT">Credit</option>
+    </select>
+  </div>
+  <button type="submit">Add Card</button>
+</form>

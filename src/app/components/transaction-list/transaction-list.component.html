@@ -1,0 +1,37 @@
+<h2>Transactions</h2>
+<ul>
+  <li *ngFor="let transaction of transactions">
+    {{ transaction.dateHeure}}: {{ transaction.description }} - {{ transaction.montant }}
+  </li>
+</ul>
+<form (ngSubmit)="addTransaction(accountId.value, beneficiaryId.value, amount.value, type.value, description.value)">
+  <h3>New Transaction</h3>
+  <div>
+    <label for="accountId">From Account:</label>
+    <select id="accountId" #accountId>
+      <option *ngFor="let account of accounts" [value]="account.id">{{ account.type }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="beneficiaryId">To Beneficiary:</label>
+    <select id="beneficiaryId" #beneficiaryId>
+      <option *ngFor="let beneficiary of beneficiaries" [value]="beneficiary.id">{{ beneficiary.nom }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="amount">Amount:</label>
+    <input id="amount" type="number" #amount>
+  </div>
+  <div>
+    <label for="type">Type:</label>
+    <select id="type" #type>
+      <option value="DEBIT">Debit</option>
+      <option value="CREDIT">Credit</option>
+    </select>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <input id="description" type="text" #description>
+  </div>
+  <button type="submit">Add Transaction</button>
+</form>
